@@ -8,7 +8,7 @@ Caroline He <c_x_he@umail.ucsb.edu>\
 Juliana Acosta-Uribe <acostauribe@ucsb.edu>\
 
 
-[hdWGCNA-celltype-subsetted.R](https://github.com/KosikLabUCSB/nucseq-PSEN1-E280A/blob/main/hdWGCNA-celltype-subsetted.R)\
+[hdWGCNA-celltype-subsetted.R](https://github.com/KosikLabUCSB/nucseq-PSEN1-E280A/blob/main/hdWGCNA-celltype-subsetted.R)
 Caroline describe the usage here
 
 
