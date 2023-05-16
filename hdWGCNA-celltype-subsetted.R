@@ -2,7 +2,7 @@
 # Code adapted by Caroline He from https://github.com/smorabit/hdWGCNA/blob/dev/vignettes/basic_tutorial.Rmd
 # 2023
 
-# Data created in script XXXXXXX
+# INPUT: Describe input
 load("~/new_frontal_official/brainFRONTAL.noMT.RData")
 
 
