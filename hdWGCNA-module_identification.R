@@ -2,7 +2,7 @@
 # Code adapted by Caroline He from https://github.com/smorabit/hdWGCNA/blob/dev/vignettes/basic_tutorial.Rmd
 # 2023
 
-# INPUT: Describe input
+# INPUT: seurat object that has underwent quality control and preprocessing as described by the Seurat package
 load("~/new_frontal_official/brainFRONTAL.noMT.RData")
 
 
