@@ -5,7 +5,7 @@ Computational pipeline developed by:\
 Camila Almeida <caalmeida@ucsb.edu>\
 Sarah Eger <eger@ucsb.edu>\
 Caroline He <c_x_he@umail.ucsb.edu>\
-Juliana Acosta-Uribe <acostauribe@ucsb.edu>\
+Juliana Acosta-Uribe <acostauribe@ucsb.edu>
 
 **Clustering and Differential Gene Expression analyses**
 
