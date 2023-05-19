@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# process with spaceranger
+# Mapping spatial gene expression reads to the genome and microscope images with spaceranger
+## Pipeline developed by Sarah J. Eger based on:
+## Space ranger tutorial: https://support.10xgenomics.com/spatial-gene-expression/software/pipelines/latest/tutorials/count-ff-tutorial
 
-# download spaceranger, cellranger & reference
+
+# Download spaceranger, cellranger & reference before running this script
 # https://support.10xgenomics.com/spatial-gene-expression/software/downloads/latest
 # https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/installation
-
-# spaceranger pipeline for Visium data
-# tutorial: https://support.10xgenomics.com/spatial-gene-expression/software/pipelines/latest/tutorials/count-ff-tutorial
 
 import pandas as pd
 import os
@@ -19,10 +19,12 @@ from multiprocessing import Pool
 def run(cmd):
     print(cmd)
     os.system(cmd)
+    
+# Set up the directories where you have stored your data    
 
 if __name__ == "__main__":
-    FASTQ_DIR = '/home/Morgane/Visium/Human'
-    RAW_DIR = '/home/eger/projects/Brain_Visium/raw'
+    FASTQ_DIR = '/home/Morgane/Visium/Human'  # Expects path to directory with <file>.fastq.gz 
+    RAW_DIR = '/home/eger/projects/Brain_Visium/raw' # 
     IMAGE_DIR = '/home/Morgane/Visium/Human/images'
     ALIGN_DIR = '/home/eger/projects/Brain_Visium/manual_alignments'
     REF_DIR = '/home/eger/software/refdata-gex-GRCh38-2020-A'
