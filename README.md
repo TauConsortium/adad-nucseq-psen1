@@ -7,10 +7,15 @@ Sarah Eger <eger@ucsb.edu>\
 Caroline He <caroline_he@berkeley.edu>\
 Juliana Acosta-Uribe <acostauribe@ucsb.edu>
 
-**Clustering and Differential Gene Expression analyses**
+**Quality Control and Cell clustering**
 
 [snRNAseq.R](https://github.com/KosikLabUCSB/nucseq-PSEN1-E280A/blob/main/snRNAseq.R) \
 Camila please descirbe your code here
+
+**Differential Gene Expression analyses**
+
+Pseudo bulk
+linear mixed model (2.2 code)
 
 **High dimensional weighted gene co-expression analysis (hd-WGCNA)**
 
