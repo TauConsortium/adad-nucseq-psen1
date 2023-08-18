@@ -17,7 +17,7 @@ Camila please descirbe your code here
 Pseudo bulk
 linear mixed model (2.2 code)
 
-**High dimensional weighted gene co-expression analysis (hd-WGCNA)**
+**High dimensional weighted gene co-expression network analysis (hd-WGCNA)**
 
 [hdWGCNA-module_identification](https://github.com/KosikLabUCSB/nucseq-PSEN1-E280A/blob/main/hdWGCNA-module_identification.R)
 This code is run after basic seurat object quality control and preprocessing. First, groups of individual cells within the Seurat object are aggregated into 'metacells', and this aggregated data is used to identify correlations between genes across metacells of the same celltype. Groups of highly interconnected genes are called 'modules'. After modules are identified, the top hub genes for each module is visualized, and statistical tests are run to identify modules that are differentially expressed between different conditions.
