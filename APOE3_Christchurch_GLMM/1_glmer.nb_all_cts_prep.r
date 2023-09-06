@@ -10,11 +10,11 @@
 # Input: data for single cell type
 # Output: GLMM results, AIC, residuals for each gene
 
-# 2.6a_glmer.nb_all_cts_prep.r 
+# 1_glmer.nb_all_cts_prep.r 
 #   - prepares a dataframe for each ct in parallel
 #   - only needs to be run once
 
-# 2.6b_glmer.nb_single_ct_parallelized.r 
+# 2_glmer.nb_single_ct_parallelized.r 
 #   - runs the analysis for every gene in parallel for a single ct
 #   - needs to be run for each ct
 
@@ -86,8 +86,7 @@ for (dir in c(oDir, cDir, rDir, aDir)) {
 }
 
 # celltypes
-# cts <- c("Exc Neur", "Oli", "GABAergic Neur", "Ast", "Mic", "Endot/Peri")
-cts <- c("Ast", "GABAergic Neur")
+cts <- c("Exc Neur", "Oli", "GABAergic Neur", "Ast")
 
 ################################################################################
 ## Formatting metadata
