@@ -14,8 +14,13 @@ Camila please descirbe your code here
 
 **Differential Gene Expression analyses**
 
-Pseudo bulk
-linear mixed model (2.2 code)
+Pseudo bulk \
+[APOE3_Christchurch_GLMM/1_glmer.nb_all_cts_prep.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/APOE3_Christchurch_GLMM/1_glmer.nb_all_cts_prep.r)
+Takes a seurat object as input and outputs a dataframe per cell type that includes the necessary metadata and gene counts for every cell to be included in the negative-binomial generalized linear mixed model. This was run twice (1) with 8 individuals (1 Christchurch homozygote & 7 E280A Christchurch non-carriers) and (2) with 10 individuals (3 Christchurch heterozygotes & 7 E280A Christchurch non-carriers). Metadata variable selection was adjusted accordingly (see section ## Formatting metadata).
+
+[APOE3_Christchurch_GLMM/2_glmer.nb_single_ct_parallelized.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/APOE3_Christchurch_GLMM/2_glmer.nb_single_ct_parallelized.r)
+Takes a single dataframe for a given cell type and outputs the results of the negative-binomial generalized linear mixed model run on every gene. Multiple genes are run in parallel to speed up the process. Change the number of cores depending on your machine. This was run separately for every cell type for each group comparison.
+
 
 **High dimensional weighted gene co-expression network analysis (hd-WGCNA)**
 
