@@ -5,7 +5,6 @@ Computational pipeline developed by:\
 Camila Almeida <caalmeida@ucsb.edu>\
 Sarah Eger <eger@ucsb.edu>\
 Caroline He <caroline_he@berkeley.edu>\
-Juliana Acosta-Uribe <acostauribe@ucsb.edu>
 
 **Quality Control and Cell clustering**
 
