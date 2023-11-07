@@ -4,7 +4,7 @@ Repository containing the computational code for the "Chaperone Gene Expression 
 Computational pipeline developed by:\
 Camila Almeida <caalmeida@ucsb.edu>\
 Sarah Eger <eger@ucsb.edu>\
-Caroline He <caroline_he@berkeley.edu>\
+Caroline He <caroline_he@berkeley.edu>
 
 **Quality Control and Cell clustering**
 
