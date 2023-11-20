@@ -11,7 +11,7 @@
 ### Useful guides / Acknowledgements
 -[Seurat v4 tutorial](https://satijalab.org/seurat/articles/pbmc3k_tutorial/)\
 -[doubletfinder](https://github.com/chris-mcginnis-ucsf/DoubletFinder/)\
--[sctransform](https://satijalab.org/seurat/articles/sctransform_vignette.html/)\
+-[sctransform](https://satijalab.org/seurat/articles/sctransform_vignette.html/)
 
 ### Process Overview:
 A **Subset out low quality cells**
