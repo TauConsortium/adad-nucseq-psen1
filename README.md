@@ -1,19 +1,18 @@
-# Single cell nuclear RNA analyses from brain tissue
-Repository containing the computational code for the "Chaperone Gene Expression Distinguishes E280A PSEN1 Autosomal Dominant Alzheimer´s by Single Nucleus RNA Sequencing" manuscript by Almeida et al.
+# Single nucleus RNA sequencing & Spatial Transcriptomics analyses from brain tissue
+Repository containing the computational code for the "Single Nucleus RNA Sequencing Demonstrates an Autosomal Dominant Alzheimer’s Disease Profile and Possible Mechanism of Disease Protection" manuscript by Almeida et al.
 
 Computational pipeline developed by:\
 Camila Almeida <caalmeida@ucsb.edu>\
 Sarah Eger <eger@ucsb.edu>\
-Caroline He <caroline_he@berkeley.edu>
+Caroline He <caroline_he@berkeley.edu>\
+Davis Westover <daviswestover@ucsb.edu>
 
 **Quality Control and Cell clustering**
 
 [snRNAseq.R](https://github.com/KosikLabUCSB/nucseq-PSEN1-E280A/blob/main/snRNAseq.R) \
-Camila please descirbe your code here
 
 **Differential Gene Expression analyses**
 
-Pseudo bulk \
 [APOE3_Christchurch_GLMM/1_glmer.nb_all_cts_prep.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/APOE3_Christchurch_GLMM/1_glmer.nb_all_cts_prep.r)
 Takes a seurat object as input and outputs a dataframe per cell type that includes the necessary metadata and gene counts for every cell to be included in the negative-binomial generalized linear mixed model. This was run twice (1) with 8 individuals (1 Christchurch homozygote & 7 E280A Christchurch non-carriers) and (2) with 10 individuals (3 Christchurch heterozygotes & 7 E280A Christchurch non-carriers). Metadata variable selection was adjusted accordingly (see section ## Formatting metadata).
 
