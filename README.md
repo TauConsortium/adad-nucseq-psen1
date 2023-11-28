@@ -43,10 +43,9 @@ Mapping spatial gene expression reads to the genome and microscope images with s
 
 [Spatial_Transcriptomics/4_integrate_and_cluster_SEURAT.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/4_integrate_and_cluster_SEURAT.r) Integrate spots from all samples and cluster with Seurat.
 
-[Spatial_Transcriptomics/5a_glmer.nb_WM_GM_prep.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/5a_glmer.nb_WM_GM_prep.r)
-[Spatial_Transcriptomics/5b_glmer.nb_WM_GM_parallelized_LME4.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/5b_glmer.nb_WM_GM_parallelized_LME4.r)
-[Spatial_Transcriptomics/5c_glmer.nb_4_sample_LME4.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/5c_glmer.nb_4_sample_LME4.r)
-(a) Prepare dataframes (b) run a negative binomial GLMM on each gene (c) run without outlier sample.
+[Spatial_Transcriptomics/5a_glmer.nb_WM_GM_prep.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/5a_glmer.nb_WM_GM_prep.r) (a) Prepare dataframes
+[Spatial_Transcriptomics/5b_glmer.nb_WM_GM_parallelized_LME4.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/5b_glmer.nb_WM_GM_parallelized_LME4.r) (b) run a negative binomial GLMM on each gene
+[Spatial_Transcriptomics/5c_glmer.nb_4_sample_LME4.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/5c_glmer.nb_4_sample_LME4.r) (c) run without outlier sample.
 
 [Spatial_Transcriptomics/6_filter_significant_DEGs.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/Spatial_Transcriptomics/6_filter_significant_DEGs.r) Filter significant differentially expressed genes.
 
