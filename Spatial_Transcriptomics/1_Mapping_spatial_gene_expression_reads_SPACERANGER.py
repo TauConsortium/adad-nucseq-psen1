@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Mapping spatial gene expression reads to the genome and microscope images with spaceranger
+# Step 1: Mapping spatial gene expression reads to the genome and microscope images with spaceranger
 ## Pipeline developed by Sarah J. Eger based on:
 ## Space ranger tutorial: https://support.10xgenomics.com/spatial-gene-expression/software/pipelines/latest/tutorials/count-ff-tutorial
 
