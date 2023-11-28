@@ -1,4 +1,4 @@
-# Single nucleus RNA sequencing & Spatial Transcriptomics analyses from brain tissue
+# Single nucleus & Spatial transcriptomics analyses
 Repository containing the computational code for the "Single Nucleus RNA Sequencing Demonstrates an Autosomal Dominant Alzheimer’s Disease Profile and Possible Mechanism of Disease Protection" manuscript by Almeida et al.
 
 Computational pipeline developed by:\
@@ -7,18 +7,22 @@ Sarah Eger <eger@ucsb.edu>\
 Caroline He <caroline_he@berkeley.edu>\
 Davis Westover <daviswestover@ucsb.edu>
 
-**Quality Control and Cell clustering**
+**Quality Control for expression matrix**
 
-[snRNAseq.R](https://github.com/KosikLabUCSB/nucseq-PSEN1-E280A/blob/main/snRNAseq.R) \
+[snRNAseq_pre-processing/pre-processing_loop.R](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/snRNAseq_pre-processing/pre-processing_loop.R) has separate readme.md: [snRNAseq_pre-processing/loop_README.md](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/snRNAseq_pre-processing/loop_README.md)
 
-**Differential Gene Expression analyses**
+**Data Processing, Analyses, Visualization, and Differential Expression Testing**
+
+[snRNAseq.R](https://github.com/KosikLabUCSB/nucseq-PSEN1-E280A/blob/main/snRNAseq.R)
+Data normalization, scaling, integration, clustering, cell-type identification.
+
+**Identification of differentially expressed genes in cell-type subpopulations**
 
 [APOE3_Christchurch_GLMM/1_glmer.nb_all_cts_prep.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/APOE3_Christchurch_GLMM/1_glmer.nb_all_cts_prep.r)
 Takes a seurat object as input and outputs a dataframe per cell type that includes the necessary metadata and gene counts for every cell to be included in the negative-binomial generalized linear mixed model. This was run twice (1) with 8 individuals (1 Christchurch homozygote & 7 E280A Christchurch non-carriers) and (2) with 10 individuals (3 Christchurch heterozygotes & 7 E280A Christchurch non-carriers). Metadata variable selection was adjusted accordingly (see section ## Formatting metadata).
 
 [APOE3_Christchurch_GLMM/2_glmer.nb_single_ct_parallelized.r](https://github.com/acostauribe/nucseq-PSEN1-E280A/blob/main/APOE3_Christchurch_GLMM/2_glmer.nb_single_ct_parallelized.r)
 Takes a single dataframe for a given cell type and outputs the results of the negative-binomial generalized linear mixed model run on every gene. Multiple genes are run in parallel to speed up the process. Change the number of cores depending on your machine. This was run separately for every cell type for each group comparison.
-
 
 **High dimensional weighted gene co-expression network analysis (hd-WGCNA)**
 
