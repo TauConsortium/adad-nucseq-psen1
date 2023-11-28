@@ -1,5 +1,5 @@
 # Pre-Processing Pipeline for snRNA Sequencing
-#### Developed by Davis Westover based on code by Camila Almeida, meant to be run in r
+#### Developed by Davis Westover based on code by Camila Almeida
 
 ### Software Needed
 
