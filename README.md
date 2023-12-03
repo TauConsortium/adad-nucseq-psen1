@@ -1,11 +1,12 @@
 # Single nucleus & Spatial transcriptomics analyses
 Repository containing the computational code for the "Single Nucleus RNA Sequencing Demonstrates an Autosomal Dominant Alzheimer’s Disease Profile and Possible Mechanism of Disease Protection" manuscript by Almeida et al.
 
-Computational pipeline developed by:\
+**Computational pipeline developed by:**\
 Camila Almeida <caalmeida@ucsb.edu>\
-Sarah Eger <eger@ucsb.edu>\
+Sarah J. Eger <eger@ucsb.edu>\
 Caroline He <caroline_he@berkeley.edu>\
-Davis Westover <daviswestover@ucsb.edu>
+Davis Westover <daviswestover@ucsb.edu>\
+Juliana Acosta-Uribe <acostauribe@ucsb.edu>
 
 ### **Quality Control for expression matrix**
 
