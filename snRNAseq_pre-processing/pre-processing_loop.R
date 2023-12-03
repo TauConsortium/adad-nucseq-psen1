@@ -1,12 +1,12 @@
 
 library(dplyr)
 library(Seurat)
-library (Matrix)
+library(Matrix)
 library(ggplot2)
 library(sctransform)
-library (EnhancedVolcano)
-library (DoubletFinder)
-library (pheatmap)
+library(EnhancedVolcano)
+library(DoubletFinder)
+library(pheatmap)
 
 
 ### Set up photo Directory
