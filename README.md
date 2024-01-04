@@ -2,7 +2,7 @@
 
 Repository containing the computational code for the "Single Nucleus RNA Sequencing Demonstrates an Autosomal Dominant Alzheimer’s Disease Profile and Possible Mechanism of Disease Protection" manuscript by Almeida et al.
 
-https://doi.org/10.5281/zenodo.10460116
+[![DOI](https://zenodo.org/badge/10460116.svg)](https://zenodo.org/badge/latestdoi/10460116)
 
 **Computational pipeline developed by:**\
 Camila Almeida <caalmeida@ucsb.edu>\
