@@ -2,6 +2,9 @@
 
 Repository containing the computational code for the "Single Nucleus RNA Sequencing Demonstrates an Autosomal Dominant Alzheimer’s Disease Profile and Possible Mechanism of Disease Protection" manuscript by Almeida et al.
 
+https://api.github.com/repos/TauConsortium/adad-nucseq-psen1
+[![DOI](https://zenodo.org/badge/{github_id}.svg)](https://zenodo.org/badge/latestdoi/{github_id})
+
 **Computational pipeline developed by:**\
 Camila Almeida <caalmeida@ucsb.edu>\
 Sarah J. Eger <eger@ucsb.edu>\
