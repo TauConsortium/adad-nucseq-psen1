@@ -1,22 +1,24 @@
 
 library(dplyr)
 library(Seurat)
-library(Matrix)
+library (Matrix)
 library(ggplot2)
 library(sctransform)
-library(EnhancedVolcano)
-library(DoubletFinder)
-library(pheatmap)
+library (EnhancedVolcano)
+library (DoubletFinder)
+library (pheatmap)
 
 
 ### Set up photo Directory
 version <- 1
+### /Your filepath here/
 iDir <- "/home/daviswestover/projects/snRNAseq"
 # create sub directory for version
 vDir <- paste0(iDir, 'images', version, "/")
 dir.create(vDir)
 
 #Read in data
+#Filepath depends on where you stored Cellranger data
 C114_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C114_C01/outs/filtered_feature_bc_matrix")
 C135_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C135_C01/outs/filtered_feature_bc_matrix")
 C140_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C140_C01/outs/filtered_feature_bc_matrix")
@@ -40,10 +42,11 @@ C291_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_
 C327_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C327_C01/outs/filtered_feature_bc_matrix")
 C342_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C342_C01/outs/filtered_feature_bc_matrix")
 C350_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C350_C01/outs/filtered_feature_bc_matrix")
-C364_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C364_C01/outs/filtered_feature_bc_matrix"
+C364_C01.data <- Read10X(data.dir = "/home/Camila/BrainData/Raw_Data/Cellranger_outs/run_countpremRNA_C364_C01/outs/filtered_feature_bc_matrix")
 
 
 ####Create Seurat Objects
+C99_C01 <- CreateSeuratObject(counts = C99_C01.data, project = "C99_C01", min.cells = 0, min.features = 0)
 C114_C01 <- CreateSeuratObject(counts = C114_C01.data, project = "C114_C01", min.cells = 0, min.features = 0)
 C135_C01 <- CreateSeuratObject(counts = C135_C01.data, project = "C135_C01", min.cells = 0, min.features = 0)
 C140_C01 <- CreateSeuratObject(counts = C140_C01.data, project = "C140_C01", min.cells = 0, min.features = 0)
@@ -57,7 +60,6 @@ C323_C01 <- CreateSeuratObject(counts = C323_C01.data, project = "C323_C01", min
 C255_C01 <- CreateSeuratObject(counts = C255_C01.data, project = "C255_C01", min.cells = 0, min.features = 0)
 C210_C01 <- CreateSeuratObject(counts = C210_C01.data, project = "C210_C01", min.cells = 0, min.features = 0)
 C269_C01 <- CreateSeuratObject(counts = C269_C01.data, project = "C269_C01", min.cells = 0, min.features = 0)
-C99_C01 <- CreateSeuratObject(counts = C99_C01.data, project = "C99_C01", min.cells = 0, min.features = 0)
 C181_C01 <- CreateSeuratObject(counts = C181_C01.data, project = "C181_C01", min.cells = 0, min.features = 0)
 C277_C01 <- CreateSeuratObject(counts = C277_C01.data, project = "C277_C01", min.cells = 0, min.features = 0)
 C226_C01 <- CreateSeuratObject(counts = C226_C01.data, project = "C226_C01", min.cells = 0, min.features = 0)
@@ -93,6 +95,7 @@ png(paste0(vDir, name, "_pre_featurecounts.png"))
 print(pre_sub_plot)
 dev.off() 
 
+#Following recommended thresholds for cell quality
 sample <- subset(sample, subset = nFeature_RNA > 200 & nFeature_RNA < 10000  & percent.mt < 5)
 post_sub_plot <- VlnPlot(sample, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), pt.size = 0.1, ncol = 3)  
 #Visualize low quality cells after subset
@@ -120,7 +123,9 @@ nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 ## Run DoubletFinder with varying classification stringencies 
 sample <- doubletFinder_v3(sample, PCs = 1:15, pN = 0.25, pK = 0.09, nExp = nExp_poi, reuse.pANN = FALSE, sct = TRUE)
-pANN_col_name <- colnames(sample@meta.data)[length(colnames(sample@meta.data))-1] # get caculated pANN value from meta.data
+# get caculated pANN value from meta.data
+pANN_col_name <- colnames(sample@meta.data)[length(colnames(sample@meta.data))-1] 
+# run doubletfinder again with pANN value
 sample <- doubletFinder_v3(sample, PCs = 1:15, pN = 0.25, pK = 0.09, nExp = nExp_poi.adj, reuse.pANN = pANN_col_name, sct = TRUE)
 
 
@@ -156,7 +161,7 @@ proc_samples <- c(proc_samples, sample)
 }
 
 #### Merge objects----
-BrainFRONTAL = merge (proc_samples[[1]], y=c(proc_samples[[2]], proc_samples[[3]],proc_samples[[4]],proc_samples[[5]], 
+BrainFRONTAL = merge(proc_samples[[1]], y=c(proc_samples[[2]], proc_samples[[3]],proc_samples[[4]],proc_samples[[5]], 
 proc_samples[[6]], proc_samples[[7]], proc_samples[[8]], proc_samples[[9]], proc_samples[[10]], proc_samples[[11]], proc_samples[[12]],
  proc_samples[[13]], proc_samples[[14]], proc_samples[[15]], proc_samples[[16]], proc_samples[[17]], proc_samples[[18]], proc_samples[[19]], 
  proc_samples[[20]], proc_samples[[21]] ,proc_samples[[22]], proc_samples[[23]], proc_samples[[24]]))
